@@ -1,4 +1,5 @@
 require 'strscan'
+require 'erb'
 
 module ANSI2HTML
   class Main
@@ -64,7 +65,7 @@ module ANSI2HTML
 </head>
 <body><pre><code>}
       end
-      s = StringScanner.new(ansi.gsub("<", "&lt;"))
+      s = StringScanner.new(ERB::Util.h(ansi))
       while(!s.eos?)
         if s.scan(/\e\[(3[0-7]|90|1)m/)
           out.print(%{<span class="#{COLOR[s[1]]}">})
