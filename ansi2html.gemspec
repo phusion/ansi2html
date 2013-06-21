@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = 'aslak.hellesoy@gmail.com'
   s.homepage    = "http://github.com/aslakhellesoy/#{s.name}"
 
-  s.add_development_dependency 'rspec', '~> 2.3.0'
+  s.add_development_dependency 'rspec', '~> 2.13.0'
 
   s.files            = `git ls-files`.split("\n")
   s.test_files       = `git ls-files -- {spec,features}/*`.split("\n")
